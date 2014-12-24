@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     std::string begin_time = getCurrentUTCTime();
 
     std::string text;
-    std::cin >> text;
+    std::getline(std::cin, text);
     file
         << "=== BEGIN OF MESSAGE ===\nMessage time from "
         << begin_time
