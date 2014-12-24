@@ -1,4 +1,5 @@
 #include <ctime>
+#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -48,9 +49,7 @@ int main(int argc, char *argv[])
     std::cout << "meslog v 1.0.1. Output to " << output << std::endl;
 
     std::fstream file(output, std::ios::app | std::ios::out);
-
     std::string begin_time = getCurrentUTCTime();
-
     std::string text;
     std::getline(std::cin, text);
     file
