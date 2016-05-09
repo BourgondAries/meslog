@@ -1,8 +1,5 @@
 #! /bin/sh
 
-printf '[ %s\n' "$(date --iso-8601=ns | tr -d ' ')" >> log
-while read value; do
-	printf '%s' "$value" | sed 's/^/\t/g' >> log
-	printf '\n' >> log
-done
-printf ']\n' >> log
+printf '[ %s\n' "$(date --iso-8601=ns | tr -d ' ')"
+sed 's/(/(40\n/g; s/)/(41)/g; s/\n/)/g; s/\[/(91)/g; s/\]/(93)/g; s/{/(123)/g; s/}/(125)/g; s/^/\t/'
+printf ']\n'
